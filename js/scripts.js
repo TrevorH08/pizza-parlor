@@ -35,7 +35,8 @@ function formHandler(event) {
   event.preventDefault();
   document.getElementById("results").setAttribute("class", "hidden");
   document.getElementById("fail").setAttribute("class", "hidden")
-  if (document.getElementsByName("toppingMeat").checked = false || document.getElementsByName("toppingVeg").checked === false) {
+  console.log(document.getElementsByName("toppingMeat").checked)
+  if (!document.querySelector("input[name='toppingMeat']:checked") || !document.querySelector("input[name='toppingVeg']:checked")) {
     document.getElementById("fail").removeAttribute("class", "hidden")
   } else {
     document.getElementById("results").removeAttribute("class","hidden");
@@ -43,7 +44,6 @@ function formHandler(event) {
     myZa.price();
     let price = "$" + myZa.totalPrice.toFixed(2);
     let time = document.querySelector("input#time").value;
-    
     document.querySelector("span#orderTime").innerText = time;
     document.querySelector("span#orderPrice").innerText = price;
     document.querySelector("span#size").innerText = myZa.size;

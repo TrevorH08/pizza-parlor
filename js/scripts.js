@@ -19,32 +19,32 @@ Za.prototype.price = function () {
   // const olives = .50;
   // const gpeppers = .50;
   // const spinach = .50;
-  if (this.size === "Personal") {
-    this.totalPrice += 8
-  } else if (this.size === "Small") {
-    this.totalPrice += 10
-  } else if (this.size === "Medium") {
-    this.totalPrice += 12
-  } else if (this.size === "Large") {
-    this.totalPrice += 14
-  } else if (this.size === "X-Large") {
-    this.totalPrice += 16
-  } else if (this.meat === "Pepperoni") {
-    this.totalPrice += 0.75
-  } else if (this.meat === "Sausage") {
-    this.totalPrice += 1
-  } else if (this.meat === "Ham") {
-    this.totalPrice += 1
-  } else if (this.veggie === "Olives") {
-    this.totalPrice += 0.50
+  if (this.veggie === "Spinach") {
+    this.totalPrice += 0.50;
   } else if (this.veggie === "Green Peppers") {
-    this.totalPrice += 0.50
-  } else if (this.veggie === "Spinach") {
-    this.totalPrice += 0.50
+    this.totalPrice += 0.50;
+  } else if (this.veggie === "Olives") {
+    this.totalPrice += 0.50;
+  } else if (this.meat === "Ham") {
+    this.totalPrice += 1;
+  } else if (this.meat === "Sausage") {
+    this.totalPrice += 1;
+  } else if (this.meat === "Pepperoni") {
+    this.totalPrice += 0.75;
+  } else if (this.size === "X-Large") {
+      this.totalPrice += 16;
+  } else if (this.size === "Large") {
+      this.totalPrice += 14;
+  } else if (this.size === "Medium") {
+      this.totalPrice += 12;
+  } else if (this.size === "Small") {
+      this.totalPrice += 10;
+  } else if (this.size === "Personal") {
+        this.totalPrice += 8;
   } else {
     // return "Please select Size and Toppings";
   }
-}
+};
 
 
 //UI LOGIC ---------------

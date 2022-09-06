@@ -11,9 +11,12 @@ const myZa = new Za("medium", "pepperoni", "olives");
 Expected Output: 
 Expected Output: myZa {size: "medium", meat: "pepperoni", veggies: "olives", price: 0}
 
-Describe: Za.prototype.cost
+Describe: Za.prototype.price
 
-test: "Prototype should classify values for each topping and size"
+test: "Prototype should classify values for each topping and size and add selected together"
+code: const myZa = new Za("medium", "pepperoni", "olives");
+Expected Output: myZa {size: "medium", meat: "pepperoni", veggies: "olives", price: $13.50}
+
 
 
 

@@ -31,22 +31,24 @@ Za.prototype.price = function () {
 
 //UI LOGIC ---------------
 
-function formHandler (event) {
-  event.preventDefault;
+function formHandler(event) {
+  event.preventDefault();
   if (document.getElementById("custom-za").value = "") {
     document.getElementById("results").removeAttribute("hidden")
     document.getElementById("results").innerText = "Please choose a Size for your Za!!"
   } else {
-    const myZa = new Za(document.getElementById("custom-za").value, document.querySelector("input[name='toppingMeat']:checked").value, document.querySelector("input[name='toppingVeg']:checked").value)
-    myZa.price()
-    document.getElementById("results").removeAttribute("hidden")
-    document.getElementById("orderTime").innerText = toString(document.getElementById("time").value)
-    document.getElementById("orderPrice").innerText = toString(myZa.price.toFixed(0))
+    const myZa = new Za(document.getElementById("custom-za").value, document.querySelector("input[name='toppingMeat']:checked").value, document.querySelector("input[name='toppingVeg']:checked").value);
+    myZa.price();
+    let price = myZa.totalPrice.toFixed(2);
+    let time = document.querySelector("input#time").value;
+    document.getElementById("results").removeAttribute("hidden");
+    document.querySelector("span#orderTime").innerText = time;
+    document.querySelector("span#orderPrice").innerText = price;
 
   }
 
 }
 
 window.addEventListener("load", function() {
-  document.getElementById("custom-za").addEventListener("submit", formHandler);
+  document.querySelector("form#custom-za").addEventListener("submit", formHandler);
 });

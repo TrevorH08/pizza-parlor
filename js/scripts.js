@@ -46,6 +46,9 @@ function formHandler(event) {
     
     document.querySelector("span#orderTime").innerText = time;
     document.querySelector("span#orderPrice").innerText = price;
+    document.querySelector("span#size").innerText = myZa.size;
+    document.querySelector("span#meat").innerText = myZa.meat;
+    document.querySelector("span#veg").innerText = myZa.veggie;
   }
 }
 

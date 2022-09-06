@@ -1,8 +1,9 @@
 Describe: Za()
 
 Test: "Constructor should return a Za object with properties for size and two toppings"
-Code: const myZa = new Za(["pepperoni", "olives"], "medium");
-Expected Output: Za {toppings: ["pepperoni", "olives"], size: "medium"}
+Code: Za(pizzaSize, toppingMeat, toppingVeg)
+const myZa = new Za("medium", "pepperoni", "olives");
+Expected Output: myZa {size: "medium", meat: "pepperoni", veggies: "olives"}
 
 
 

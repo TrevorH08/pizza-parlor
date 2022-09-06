@@ -9,10 +9,10 @@ function Za(pizzaSize, toppingMeat, toppingVeg) {
 
 Za.prototype.price = function () {
   if (this.veggie === "Olives" || this.veggie === "Green Peppers" || this.veggie === "Spinach") {
-  this.totalPrice += .50;
+    this.totalPrice += .50;
   }
   if (this.meat === "Pepperoni" || this.meat === "Sausage" || this.meat === "Ham") {
-  this.totalPrice += 1;
+    this.totalPrice += 1;
   }
   if (this.size === "Personal") {
     this.totalPrice += 8;
@@ -33,20 +33,20 @@ Za.prototype.price = function () {
 
 function formHandler(event) {
   event.preventDefault();
-  if (document.getElementById("custom-za").value = "") {
-    document.getElementById("results").removeAttribute("hidden")
-    document.getElementById("results").innerText = "Please choose a Size for your Za!!"
+  document.getElementById("results").setAttribute("class", "hidden");
+  document.getElementById("fail").setAttribute("class", "hidden")
+  if (document.getElementsByName("toppingMeat").checked = false || document.getElementsByName("toppingVeg").checked === false) {
+    document.getElementById("fail").removeAttribute("class", "hidden")
   } else {
-    const myZa = new Za(document.getElementById("custom-za").value, document.querySelector("input[name='toppingMeat']:checked").value, document.querySelector("input[name='toppingVeg']:checked").value);
+    document.getElementById("results").removeAttribute("class","hidden");
+    const myZa = new Za(document.getElementById("pizza-size").value, document.querySelector("input[name='toppingMeat']:checked").value, document.querySelector("input[name='toppingVeg']:checked").value);
     myZa.price();
-    let price = myZa.totalPrice.toFixed(2);
+    let price = "$" + myZa.totalPrice.toFixed(2);
     let time = document.querySelector("input#time").value;
-    document.getElementById("results").removeAttribute("hidden");
+    
     document.querySelector("span#orderTime").innerText = time;
     document.querySelector("span#orderPrice").innerText = price;
-
   }
-
 }
 
 window.addEventListener("load", function() {

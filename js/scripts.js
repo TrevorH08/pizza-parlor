@@ -31,5 +31,22 @@ Za.prototype.price = function () {
 
 //UI LOGIC ---------------
 
-window.addEventListener("load", function (){
-  
+function formHandler (event) {
+  event.preventDefault;
+  if (document.getElementById("custom-za").value = "") {
+    document.getElementById("results").removeAttribute("hidden")
+    document.getElementById("results").innerText = "Please choose a Size for your Za!!"
+  } else {
+    const myZa = new Za(document.getElementById("custom-za").value, document.querySelector("input[name='toppingMeat']:checked").value, document.querySelector("input[name='toppingVeg']:checked").value)
+    myZa.price()
+    document.getElementById("results").removeAttribute("hidden")
+    document.getElementById("orderTime").innerText = toString(document.getElementById("time").value)
+    document.getElementById("orderPrice").innerText = toString(myZa.price.toFixed(0))
+
+  }
+
+}
+
+window.addEventListener("load", function() {
+  document.getElementById("custom-za").addEventListener("submit", formHandler);
+});
